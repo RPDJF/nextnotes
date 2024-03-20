@@ -27,7 +27,7 @@ Nextnotes is a project aimed at helping me master Next.js through hands-on pract
 2. Change into the project directory
 
    ```bash
-   cd next notes
+   cd nextnotes
    ```
 3. Install npm dependecies
 
