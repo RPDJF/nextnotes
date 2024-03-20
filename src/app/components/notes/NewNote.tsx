@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function NewNote() {
-	const [showComponent, setShowComponent] = useState(false);
+	const [showComponent, setShowComponent] = useState(true);
 
 	const handleCancel = () => {
 		setShowComponent(false); // Call the function passed from the parent component to update its state

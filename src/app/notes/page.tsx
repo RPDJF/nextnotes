@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Note from "./NoteClass";
+import Note from "@/app/class/NoteClass";
 import Loading from './loading';
 
 async function fetchNotes(): Promise<Note[]>{
@@ -10,9 +10,8 @@ async function fetchNotes(): Promise<Note[]>{
     return data as Note[];
 }
 
-const DynamicNoteToolbar = dynamic(() => import('./NoteToolbar'), { ssr: false, loading: () => <Loading /> });
-const DynamicNoteCollection = dynamic(() => import('./NoteCollection'), { ssr: false, loading: () => <Loading /> });
-const DynamicNewNote = dynamic(() => import('./NewNote'), { ssr: false, loading: () => <Loading /> });
+const DynamicNoteToolbar = dynamic(() => import('../components/notes/NoteToolbar'), { ssr: false, loading: () => <Loading /> });
+const DynamicNoteCollection = dynamic(() => import('../components/notes/NoteCollection'), { ssr: false, loading: () => <Loading /> });
 
 export default async function NotesPage() {
 
@@ -20,10 +19,9 @@ export default async function NotesPage() {
 
     return (
         <main>
-			<DynamicNewNote />
             <h1 className="text-center text-3xl my-8">Notes</h1>
            	<DynamicNoteToolbar notes={notes} />
-            <div className="container mx-auto"><DynamicNoteCollection notes={notes} /></div>
+            <div className="mx-64"><DynamicNoteCollection notes={notes} /></div>
         </main>
     );
 }

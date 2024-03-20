@@ -1,7 +1,7 @@
-import NewNote from '../notes/NewNote';
+import NewNote from '../components/notes/NewNote';
 import dynamic from 'next/dynamic';
 
-const DynamicNewNote = dynamic(() => import('../notes/NewNote'), { ssr: false, loading: () => <p>Loading...</p>});
+const DynamicNewNote = dynamic(() => import('../components/notes/NewNote'), { ssr: false, loading: () => <p>Loading...</p>});
 
 export default function Test() {
 	return (

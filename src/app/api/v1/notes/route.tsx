@@ -6,7 +6,7 @@ import mysql from "mysql2/promise";
 
 
 // To handle a GET request to /api
-export async function GET(request: NextApiRequest) {
+export async function GET(request: Request) {
 	try {
 		const db = await mysql.createConnection({
 			host: "127.0.0.1",
@@ -18,7 +18,6 @@ export async function GET(request: NextApiRequest) {
 	
 		const [result] = await db.execute("SELECT * FROM tbl_notes");
 		await db.end();
-		console.log(result);
 		return NextResponse.json(result, { status: 200 });
 	} catch (error) {
 		console.error(error);
@@ -27,7 +26,7 @@ export async function GET(request: NextApiRequest) {
 }
 
 // To handle a POST request to /api
-export async function POST(request: NextApiRequest) {
+/*export async function POST(request: Request | NextApiRequest) {
 	try {
 		const db = await mysql.createConnection({
 			host: "127.0.0.1",
@@ -45,6 +44,6 @@ export async function POST(request: NextApiRequest) {
 		console.error(error);
 		return NextResponse.json({ message: "An error occurred" }, { status: 500 });
 	}
-}
+}*/
 
 // Same logic to add a `PATCH`, `DELETE`...

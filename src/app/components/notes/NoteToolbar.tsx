@@ -1,6 +1,6 @@
 'use client';
 
-import Note from "./NoteClass";
+import Note from "@/app/class/NoteClass";
 
 function NoteToolbar({ notes }: { notes: Note[]}) {
 	const saveHandler = () => {
