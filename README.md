@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Nextnotes 🚀
+
+Welcome to Nextnotes, my personal coding playground for mastering Next.js! 🎉
+
+## Overview
+
+Nextnotes is a project aimed at helping me master Next.js through hands-on practice. This repository serves as my virtual workspace where I can experiment with Next.js concepts and build cool projects.
+
+## Feature
+
+- **Note Creation**: Create and store notes in a MySQL database.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js installed on your machine
+- Docker installed (for MySQL)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone this repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/rpdjf/nextnotes
+   ```
+2. Change into the project directory
 
-## Learn More
+   ```bash
+   cd next notes
+   ```
+3. Install npm dependecies
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm i
+   ```
+4. Start the MySQL server with Docker Compose (for test only)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   docker-compose -f ./compose-mysql-4test.yaml up -d
+   ```
+5. Start the application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm start
+   ```
+The server will be running at 127.0.0.1:3000

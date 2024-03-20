@@ -9,14 +9,14 @@ import mysql from "mysql2/promise";
 export async function GET(request: NextApiRequest) {
 	try {
 		const db = await mysql.createConnection({
-			host: "192.168.1.15",
+			host: "127.0.0.1",
 			user: "root",
 			password: "password",
 			port: 3306,
-			database: "nextnotes",
+			database: "db_nextnotes",
 		});
 	
-		const [result] = await db.execute("SELECT * FROM tb_notes");
+		const [result] = await db.execute("SELECT * FROM tbl_notes");
 		await db.end();
 		console.log(result);
 		return NextResponse.json(result, { status: 200 });
@@ -30,15 +30,15 @@ export async function GET(request: NextApiRequest) {
 export async function POST(request: NextApiRequest) {
 	try {
 		const db = await mysql.createConnection({
-			host: "192.168.1.15",
+			host: "127.0.0.1",
 			user: "root",
 			password: "password",
 			port: 3306,
-			database: "nextnotes",
+			database: "db_nextnotes",
 		});
 
 		const { title, content, date } = request.body;
-		await db.execute("INSERT INTO tb_notes (title, content, date) VALUES (?, ?, ?)", [title, content, date]);
+		await db.execute("INSERT INTO tbl_notes (title, content, date) VALUES (?, ?, ?)", [title, content, date]);
 		await db.end();
 		return NextResponse.json({ message: "Note added" }, { status: 201 });
 	} catch (error) {

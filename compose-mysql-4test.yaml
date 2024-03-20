@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mysql-4test:
+    container_name: mysql-4test
+    image: mysql:latest
+    command: --init-file /data/application/init-4test-db.sql
+    volumes:
+      - ./init-4test-db.sql:/data/application/init-4test-db.sql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
