@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 		<body className={inter.className}>
-			<header className="flex h-16 bg-slate-800 items-center">
+			<header className="flex h-16 bg-slate-800 items-center fixed top-0 left-0 right-0">
 				<div className="h-full w-20 mx-8">
 					<Image src="/ruinformatique.gif" alt="Ruinformtique logo" width={60} height={60} unoptimized/>
 				</div>
