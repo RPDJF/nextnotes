@@ -44,4 +44,9 @@ Nextnotes is a project aimed at helping me master Next.js through hands-on pract
    ```bash
    npm start
    ```
+
+   since the app is still in dev process, you may want to use dev build instead 👌
+   ```bash
+   npm run dev
+   ```
 The server will be running at 127.0.0.1:3000
