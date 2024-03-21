@@ -1,6 +1,5 @@
 import Note from "@/app/class/NoteClass";
 import NoteToolbar from "@/app/components/notes/NoteToolbar";
-import NotesCollection from "@/app/components/notes/NoteCollection";
 import AddButton from "@/app/components/UI/AddButton";
 import NoteDiv from "@/app/components/notes/NoteDiv";
 import db from "@/app/db";
