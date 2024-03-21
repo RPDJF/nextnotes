@@ -28,7 +28,7 @@ CREATE TABLE `tbl_notes` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
   `content` longtext,
-  `date` datetime DEFAULT NULL,
+  `date` longtext,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_notes` (
 
 LOCK TABLES `tbl_notes` WRITE;
 /*!40000 ALTER TABLE `tbl_notes` DISABLE KEYS */;
-INSERT INTO `tbl_notes` VALUES (1,'4test-db note','my very first note','2024-03-20 00:00:00');
+INSERT INTO `tbl_notes` VALUES (1,'4test-db note','my very first note','2024-03-20');
 /*!40000 ALTER TABLE `tbl_notes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
