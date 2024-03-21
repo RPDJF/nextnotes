@@ -30,6 +30,9 @@ export default function RootLayout({
 						<li>
 							<a href="/notes">Notes</a>
 						</li>
+						<li>
+							<a href="/contactus">Contact Us</a>
+						</li>
 					</ul>
 				</nav>
 			</header>

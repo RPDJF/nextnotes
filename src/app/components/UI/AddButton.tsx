@@ -1,4 +1,10 @@
-export default function AddButton({clickHandler}: {clickHandler: () => void}) {
+'use client';
+
+export default function AddButton() {
+	const clickHandler = () => {
+		console.log("Add button clicked");
+	}
+
 	return (
 		<div className="w-96 h-96 flex justify-center items-center">
 			<div className="hover:animate-sizeup cursor-pointer" onClick={clickHandler}>

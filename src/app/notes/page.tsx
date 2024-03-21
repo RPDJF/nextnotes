@@ -1,18 +1,14 @@
-import dynamic from "next/dynamic";
 import Note from "@/app/class/NoteClass";
-import Loading from "@/app/components/UI/loading";
-import Error from "@/app/components/UI/error";
+import NoteToolbar from "@/app/components/notes/NoteToolbar";
+import NotesCollection from "@/app/components/notes/NoteCollection";
+import AddButton from "@/app/components/UI/AddButton";
+import NoteDiv from "@/app/components/notes/NoteDiv";
+import db from "@/app/db";
 
 async function fetchNotes(): Promise<Note[]>{
-    const res = await fetch("http://localhost:3000/api/v1/notes/", {
-        next: { revalidate: 10 },
-    });
-    const data = await res.json();
-    return data as Note[];
+	const [query] = await db.query("SELECT * FROM tbl_notes");
+	return query as Note[];
 }
-
-const DynamicNoteToolbar = dynamic(() => import("@/app/components/notes/NoteToolbar"), { ssr: false, loading: () => <Loading /> });
-const DynamicNoteCollection = dynamic(() => import("@/app/components/notes/NoteCollection"), { ssr: false, loading: () => <Loading /> });
 
 export default async function NotesPage() {
 
@@ -21,8 +17,15 @@ export default async function NotesPage() {
     return (
         <main className="mt-32">
             <h1 className="text-center text-3xl my-8">Notes</h1>
-           	<DynamicNoteToolbar notes={notes} />
-            <div className="mx-64"><DynamicNoteCollection notes={notes} /></div>
+			<NoteToolbar notes={notes}/>
+            <div className="mx-32 ml-64">
+			<div className="flex flex-wrap gap-32">
+				{notes.map((note) => (
+					<NoteDiv key={note.id} note={note}/>
+				))}
+				<AddButton />
+			</div>
+			</div>
         </main>
     );
 }
